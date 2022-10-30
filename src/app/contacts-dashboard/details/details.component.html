@@ -1,0 +1,72 @@
+<div class="main-detail">
+	<div class="detail">
+		<div style="flex: 1;"></div>
+		<div style="display: flex; flex: 9; align-items: center;">
+			<div>
+				<img [src]="selectedContact?.avatar" alt="">
+			</div>
+			<div class="profiel-description">
+				<div class="profile-detail">
+					<h4>{{selectedContact?.FullName}}</h4>
+					<h5>{{selectedContact?.department}}</h5>
+				</div>
+				<div class="buttons">
+					<button>
+						<img src="../../../../assets/message-icon.png" alt="" class="message-img">
+						Message
+					</button>
+					<img src="../../../../assets/Call.png" alt="" class="profile-actions">
+					<img src="../../../../assets/download.png" alt="" class="profile-actions">
+					<img src="../../../../assets/Actions.png" alt="" class="profile-actions">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="more-detail">
+		<span>Bio</span>
+		<p>{{selectedContact?.bio}}</p>
+	</div>
+	<div class="more-detail more-detail-flex">
+		<div class="flex-3">
+			<span>Email</span>
+			<div>
+				<p *ngIf="selectedContact?.PrimaryEmail">{{selectedContact.PrimaryEmail}}</p>
+				<p *ngFor="let email of selectedContact?.RestEmails">{{email.contact}}</p>
+			</div>
+		</div>
+		<div *ngIf="selectedContact?.PrimaryEmail">
+			<p class="badge">Primary</p>
+		</div>
+	</div>
+	<div class="more-detail">
+		<span>Dial</span>
+		<p>{{selectedContact?.dial}}</p>
+	</div>
+	<div class="more-detail">
+		<span>Meeting</span>
+		<p>{{selectedContact?.meeting}}</p>
+	</div>
+	<div class="more-detail more-detail-flex">
+		<div class="flex-3">
+			<span>Phone</span>
+			<div>
+				<p *ngIf="selectedContact?.PrimaryPhone">{{selectedContact.PrimaryPhone}}</p>
+				<p *ngFor="let phone of selectedContact?.RestPhones">{{phone.contact}}</p>
+			</div>
+		</div>
+		<div *ngIf="selectedContact?.PrimaryPhone">
+			<p class="badge">Primary</p>
+		</div>
+	</div>
+	<div class="more-detail">
+		<span>Social</span>
+		<!-- better to use angular material buttons/a with icons -->
+		<div class="social-links">
+			<img src="../../../../assets/facebook.png" alt="">
+			<img src="../../../../assets/pinterest.png" alt="">
+			<img src="../../../../assets/twitter.png" alt="">
+			<img src="../../../../assets/linkedin.png" alt="">
+			<img src="../../../../assets/google.png" alt="">
+		</div>
+	</div>

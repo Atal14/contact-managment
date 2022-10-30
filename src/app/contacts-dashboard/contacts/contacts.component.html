@@ -1,0 +1,39 @@
+<div>
+    <div class="conatct-header">
+        <div class="contacts">
+            <img src="../../../../assets/Menu.png" alt="">
+            <h1>Contacts</h1>
+        </div>
+        <div class="arrows">
+            <img src="../../../../assets/left-arrow.png" alt="" class="left-arrow" (click)="pageChange(1)">
+            <img src="../../../../assets/right-arrow.png" alt="" (click)="pageChange(-1)">
+        </div>
+    </div>
+    <div class="search-section">
+        <div>
+            <input type="text" [formControl]="searchCtrl" placeholder="search for a contact">
+            <h4>Name, email or phone number</h4>
+        </div>
+        <img src="../../../../assets/search-icon.png" alt="">
+    </div>
+    <div class="chat-name-section" *ngFor="let contact of (contacts$ | async); let i = index"
+        [routerLink]="[{ outlets: { 'details': [i] } }]" (click)="setIndex(i)" [ngClass]="{'highlighted': i === selectedIndex}">
+        <div class="chat-name" >
+            <div class="chat-image">
+                <img [src]="contact.avatar" alt="">
+                <!-- <h6 class="status">.</h6> -->
+                <!-- <img src="../../../../assets/status.png" alt="" class="status"> -->
+            </div>
+            <div class="chat-description">
+                <h4>{{ contact.FullName }}</h4>
+                <h5>{{ contact.department }}</h5>
+            </div>
+        </div>
+        <div class="chat-actions">
+            <img src="../../../../assets/Chat.png" alt="">
+            <img src="../../../../assets/Call.png" alt="">
+            <img src="../../../../assets/Actions.png" alt="">
+        </div>
+    </div>
+
+</div>
