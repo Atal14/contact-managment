@@ -93,6 +93,23 @@ body {
         .chat-description {
             margin-left: 15px;
         }
+
+        .dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .active {
+            background-color: #28C345;
+        }
+        .idle {
+            background-color: #F6933E;
+        }
+        .offline {
+            background-color: #FF808B;
+        }
     }
 
     h5 {
@@ -109,7 +126,7 @@ body {
                 margin-right: 0;
             }
         }
-        
+
     }
 
 }

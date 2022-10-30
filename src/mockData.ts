@@ -77,7 +77,7 @@ export const users: IUser[] = [
     {
         firstName: 'Marvin',
         lastName: 'Lambert',
-        status: STATUS.IDLE,
+        status: STATUS.OFFLINE,
         department: DEPARTMENT.DESIGNER,
         avatar: 'https://i.pravatar.cc/114?img=4',
         bio: 'Student. Troublemaker. Food maven. Social media enthusiast. Twitter advocate. Zombie aficionado.',

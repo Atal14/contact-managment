@@ -21,8 +21,7 @@
         <div class="chat-name" >
             <div class="chat-image">
                 <img [src]="contact.avatar" alt="">
-                <!-- <h6 class="status">.</h6> -->
-                <!-- <img src="../../../../assets/status.png" alt="" class="status"> -->
+                <span class="status dot" [ngClass]="contact.status"></span>
             </div>
             <div class="chat-description">
                 <h4>{{ contact.FullName }}</h4>
